@@ -1,0 +1,79 @@
+body {
+    width: 80vh;
+    margin: 2em;
+    padding: 2rem
+}
+
+nav {
+    width: 100%;
+    /*height: 100vh;*/
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.members {
+    padding: 40px 0 0 0;
+    font-size: 25px;
+}
+
+article {
+    justify-content: center;
+    background-color: darkcyan;
+    margin: 20px 5px;
+    padding: 10px;
+}
+
+div {
+    border: 2px solid rebeccapurple;
+    border-radius: 5px;
+    margin: 10px 10px 10px 30px;
+    padding: 20px 20px 20px 100px;
+    grid-template-columns: 3;
+}
+
+ul#menu {
+    list-style: none;
+    width: 250px;
+}
+
+ul#menu li {
+    margin: 8px 0;
+    position: relative;
+    color: floralwhite;
+    background-color: #2d2d2d;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+ul#menu li ::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #f0f;
+    transition: 1s all ease-in-out;
+}
+
+ul#menu li:hover ::before {
+    border-radius: 0 50px 50px 0;
+    width: 110%;
+}
+
+ul#menu li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: dimgrey;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: large;
+    font-weight: bolder;
+    line-height: 30px;
+    
+    color: floralwhite;
+    position: relative;
+    z-index: 1;
+}
