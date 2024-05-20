@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Solar sizing</title>
+</head>
+<body>
+    <div>
+        <h2>Calculate your AC loads</h2>
+        <h3>Loads: </h3>
+            <p>Quantity: 
+                <input type="number" class="qty">
+            </p>
+            <p>Watts (W): 
+                <input type="number" class="watts">
+            </p>
+            <p>Hrs/day (Hrs/day): 
+                <input type="number" class="hrs_day">
+            </p>
+            <p>Watt-hrs/day for first load (Wh/day): 
+                <span id="watts_hrs">0</span>
+            </p>
+            <button onclick="calcWatthrs()">Calculate</button>
+            <p><strong><i><ul><span id="message"></span></ul></i></strong></p>
+
+            <h4>
+                Total Watt-hrs/day for more loads (Wh/day): <span class="wattsHrs">0</span>
+                <p>
+                    <button onclick="storage()">
+                        Click for All
+                    </button>
+                </p>
+            </h4>
+            
+            <!--<button onclick="clear()">Clear</button>-->
+    </div>
+    <br>
+
+    <div>
+        <h2>System Loads</h2>
+        <p>Actual A.C Watt-hours per day (Wh/day): 
+            <span class="watthours">0
+                <!--<input type="number" id="watthours" placeholder="7000Wh/day">-->
+            </span>
+        </p>
+        <p>Inverter D.C input voltage (V): 
+            <span>
+                <input type="number" id="inverter" placeholder="24">
+            </span>
+        </p>
+        <p>Amp-hours per day (Ah/day): 
+            <span class="amps">0</span>
+        </p>
+
+        <button onclick=calcAmphrs();>Calculate</button>
+    </div>
+    <br>
+
+    <div>
+        <h2>Array Sizing</h2>
+        <p>Total average amp-hours per day (Ah/day):     
+            <span id="amps1">0</span>
+        </p>
+        <p>Average sun-hours per day in your area: 
+            <span>
+                <input type="number" id="sunhours" placeholder="">
+            </span>
+        </p>
+        <p>Total solar array amps required (Ah/day): 
+            <span id="amps2">0</span>
+        </p>
+
+        <button onclick=calcArrayAmps();>Calculate</button>
+    </div>
+    
+    <br><br>
+
+    <div>
+        <h3>String Sizing</h3>
+        <p> Peak amps of solar-module used. (See module spec's.) (Ah): 
+            <span>
+                <input type="number" id="peakAmps" placeholder="">
+            </span>
+        </p>
+        <p>Total number of solar-modules in parallel required: 
+            <span id="parallel">0</span>
+        </p>
+
+        <button onclick=calcPrlModules();>Calculate</button>
+        <p>Highest next whole number of parallel modules. (Round-off above figure): 
+            <span id="parallelModules">0</span>
+            <p>
+                <input type="number" id="plModules" placeholder="next nearest whole no.">
+            </p>
+        </p>
+        <p>Number of modules in each series string to provide DC voltage: 
+            <span id="stringModules">0</span>
+        </p>
+        <p>Number of strings: 
+            <span id="strings">0</span>
+        </p>
+
+        <button onclick=calcModules();>Calculate</button>
+    </div>
+
+    <div>
+        <h2>Inverter Sizing</h2>
+        <p>DC to AC Inverter's efficiency (%): 
+            <span>
+                <input type="number" id="efficiency" placeholder="85">
+            </span>
+        </p>
+        <p>Inverter D.C input voltage used at start (V): 
+            <span id="inverterVolt"> 0
+                <!--<input type="number" id="inverterVolt" placeholder="24">-->
+            </span>
+        </p>
+        <p>PV array rating (Check from above) (Ah): 
+            <span id="rating"> 0
+                <!--<input type="number" id="rating" placeholder="">-->
+            </span>
+        </p>
+        <p>PV array power (W): 
+            <span id="watts">0</span>
+        </p>
+        <p>Inverter required (W): 
+            <span id="invertersize">0</span>
+        </p>
+        <p>Rounding up the result (KW): 
+            <span id="kilowatts">0</span>
+        </p>
+
+        <button onclick=calcInverter();>Calculate</button>
+    </div>
+    
+</body>
+</html>
